@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>select dinâmico - VueJS [init]</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <style>
+        .redColor{
+            color: red;
+        }
+
+        .blueColor{
+            color: blue;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ title | upper }}</h1>
+
+        <hr>
+
+        <select v-model="selected">
+            <option v-for="team in teams" :value="$index ">{{ team }}</option>
+        </select>
+
+        <br><br><br>
+
+        <hr>
+
+        <select v-model="selected">
+            <option v-for="tvTeam in teamsTv" :value="tvTeam ">{{ tvTeam.name }}</option>
+        </select>
+
+        <br><br><br>
+
+        <hr>
+
+        <pre>{{ selected | json }}</pre>
+
+        <script src="js/select-dinamico.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

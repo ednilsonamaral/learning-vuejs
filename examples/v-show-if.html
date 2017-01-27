@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Diretivas - v-show / v-if - VueJS [init]</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+
+        <style>
+        .redColor{
+            color: red;
+        }
+
+        .blueColor{
+            color: blue;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ title | upper }}</h1>
+
+        <hr>
+
+        <!-- <img src="img/haha.jpg" v-show="img.visible"> -->
+        <!-- <p v-else>Oculto</p> -->
+
+        <img src="img/haha.jpg" v-if="img.visible">
+
+        <br><br>
+
+        <input type="checkbox" v-model="img.visible"> Visible?
+
+        <br><br><br>
+
+        <hr>
+
+        <pre>{{ $data | json }}</pre>
+
+        <script src="js/v-show-if.js"></script>
+    </body>
+</html>

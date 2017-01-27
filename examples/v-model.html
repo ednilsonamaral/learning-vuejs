@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Diretivas - v-model - VueJS [init]</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+
+        <style>
+        .redColor{
+            color: red;
+        }
+
+        .blueColor{
+            color: blue;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ title | upper }}</h1>
+        <p v-bind:id="name">{{ description | limit 8}}</p>
+        <p>{{ active ? 'ativo' : 'inativo' }}</p>
+        <p :class="{ 'active': active }">{{ description }}</p>
+        <p :class="{ 'redColor': false, 'blueColor': true }">{{ description | limit 8}}</p>
+
+        <input type="text" value="{{ title }}">
+        <input type="text" v-bind:value="title">
+        <input type="text" v-model="title">
+        <input type="text" v-model="title" lazy>
+        <input type="text" v-model="title" debounce="5000">
+
+        <br>
+        <hr>
+
+        <!-- <input type="radio" value="0" name="radio_one"> Inativo
+        <input type="radio" value="1" name="radio_one"> Ativo -->
+
+        <!-- <input type="radio" value="0" v-model="active"> Inativo
+        <input type="radio" value="1" v-model="active"> Ativo -->
+
+        <!-- <input type="radio" :value="0" v-model="active"> Inativo
+        <input type="radio" :value="1" v-model="active"> Ativo -->
+
+        <!-- <input type="radio" :value="false" v-model="active"> Inativo
+        <input type="radio" :value="true" v-model="active"> Ativo -->
+
+        <!-- <select v-model="active">
+            <option :value="0">Inativo</option>
+            <option :value="1">Ativo</option>
+        </select> -->
+
+        <!-- <select v-model="color" multiple>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="red">Vermelho</option>
+            <option value="yellow">Amarelo</option>
+        </select> -->
+
+        <!-- <input type="checkbox" v-model="color" value="blue"> Azul
+        <input type="checkbox" v-model="color" value="red"> Vermelho
+        <input type="checkbox" v-model="color" value="yellow"> Amarelo -->
+
+        <input type="checkbox" :false-value="'INATIVO'" :true-value="'ATIVO'" v-model="status" value="yellow"> Ativo?
+
+        <pre>{{ $data | json }}</pre>
+
+        <script src="js/v-model.js"></script>
+    </body>
+</html>

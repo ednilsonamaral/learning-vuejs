@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Diretivas - v-for - VueJS [init]</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.min.js"></script>
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+
+        <style>
+        .redColor{
+            color: red;
+        }
+
+        .blueColor{
+            color: blue;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ title | upper }}</h1>
+
+        <hr>
+
+        <ul>
+            <li v-for="team in teams">
+                {{ $index }} - {{ team }}
+                <span class="blueColor" v-show="($index % 2) == 0">(par)</span>
+            </li>
+        </ul>
+
+        <br><br><br>
+
+        <ul>
+            <li v-for="(index, tvTeam) in teamsTv">
+                {{ index }} - {{ tvTeam.name }}
+                <span class="blueColor">({{ tvTeam.title }})</span>
+            </li>
+        </ul>
+
+        <br><br><br>
+
+        <hr>
+
+        <pre>{{ $data | json }}</pre>
+
+        <script src="js/v-for.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
+    </body>
+</html>
