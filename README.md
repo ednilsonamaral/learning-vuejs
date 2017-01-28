@@ -1,4 +1,4 @@
-# Learning VueJS  
+# Learning Vue.js 1.x
 
 VueJS são componentes reativos para interfaces web modernas. É uma biblioteca para criar interfaces web iterativas. Não é um framework completo, é focado para ser exclusivamente a camada de view.
 
