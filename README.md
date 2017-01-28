@@ -371,12 +371,50 @@ Para instalar o **vue-cli** basta executar o seguinte comando: `npm install -g v
 
 Para visualizar os templates disponíveis basta executar o seguinte comando: `vue list`. E para criar um projeto com um template padrão do `vue-cli`, basta executar o seguinte comando: `vue init nome_template nome_projeto`, por exemplo, `vue init webpack vue-webpack`.
 
+Ele irá instalar o projeto dividido em vários arquivos e pastas, vamos descobrir o que cada pasta possui e qual é sua responsabilidade.
+
+
+* `build`: possui os arquivos de configuração que irão fazer o *build* da aplicação;  
+* `config`: alguns arquivos que precisamos alterar uma coisa ou outra em nosso ambiente;  
+* `src`: é o nosso **CÓDIGO FONTE**, onde iremos brincar pra caramba.
+
+
+## Single File Component  
+
+O Vue.js possui um tipo de arquivo com a extensão `.vue`. Com esses tipos de arquivo irá facilitar e muito a nossa vida enquanto desenvolvemos o nosso projeto. Um arquivo `.vue` é dividido em três partes: `<template></template>`, `<script></script>` e `<style></style>`.
 
 ```html  
+<template>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: 'Hello World!',
+    };
+  },
+};
+</script>
+
+<style>
+h1 {
+  color: #42b983;
+}
+</style>
 ```
 
-```html  
-```
+Para transformar os arquivos `.vue` em arquivos `.js` existem alguns pacotes que realizam esse trabalho. Se o template do seu projeto é Browserify o pacote é **vueify**. Agora, se o template do seu projeto é o Webpack, então o carinha que vai fazer esse trabalho é o **vue-loader**.
 
-```html  
-```
+
+## Hot reload
+
+É um reload, porém diferente de *live reload* ou *browser sync*. Ele dá o reload apenas na parte do código que você modificou, não recarrega a página toda. Ele atualiza o template, o javascript e o CSS; porém o objeto data não é recarregado/manipulado.
+
+
+## ESLint
+
+É uma ferramenta para garantir a qualidade e o padrão no nosso código javascript. Isso, quanto ao trabalho em equipe é importantissimo, pois garantimos assim que a equipe mantenha o código no padrão e com qualidade.
